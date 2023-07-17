@@ -15,7 +15,7 @@ inputs:
     default: 'build/site'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: ghcr.io/opengov/structurizr-site-generatr:main
   args:
     - generate-site
     - --workspace-file
