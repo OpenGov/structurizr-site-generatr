@@ -1,0 +1,26 @@
+name: 'Structurizr Site Generatr'
+description: 'Generates a static site from a Structurizr workspace'
+inputs:
+  workspace-file:
+    description: 'Path of workspace DSL file'
+    required: true
+    default: 'workspace.dsl'
+  assets-dir:
+    description: 'Path to assets directory'
+    required: false
+    default: 'assets'
+  output-dir:
+    description: 'Path to generate static site to'
+    required: false
+    default: 'build/site'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - generate-site
+    - --workspace-file
+    - ${{ inputs.workspace-file }}
+    - --assets-dir
+    - ${{ inputs.assets-dir }}
+    - --output-dir
+    - ${{ inputs.output-dir }}
