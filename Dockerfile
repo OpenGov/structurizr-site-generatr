@@ -12,6 +12,6 @@ WORKDIR /opt/structurizr-site-generatr
 COPY build/install/structurizr-site-generatr ./
 RUN chmod +x /opt/structurizr-site-generatr/bin/structurizr-site-generatr
 
-USER generatr
+#USER generatr
 VOLUME ["/var/model"]
 WORKDIR /var/model
